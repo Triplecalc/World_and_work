@@ -8,7 +8,7 @@
     <body>
         <h1 id="rub">Рублей:0</h1>
         <button id="rab" onclick="poitiNaRaboty()"><h3 id="i">Пойти на работу (Макдональдс)</h3></button>
-        <p id="narab" style="display:none;">Вы на работе, подождите когда вернётесь...</p>
+        <p id="narab" style="display:none;">Вы на работе, ждём вашего возвращения...</p>
         <h3 id="edaN">Еда:100</h3>
         <h3 id="vodaN">Вода:100</h3>
         <h3 id="coled">Количество еды:0</h3>
@@ -105,7 +105,7 @@
                     edd -= 1;
                 }
                 else {
-                    alert("У вас нет еды");
+                    alert("У вас нет еды!");
                 }
             }
             function vipit() {
@@ -114,7 +114,7 @@
                     vodd -= 1;
                 }
                 else {
-                    alert("У вас нет еды");
+                    alert("У вас нет еды!");
                 }
             }
             function rabota1() {
@@ -130,7 +130,7 @@
                 elem.innerHTML = "Пойти на работу (сантехник)"
                 }
                 else {
-                    alert("Не хватает рублей");
+                    alert("У вас не хватает денег!");
                 }
             }
             function rabota2() {
@@ -146,7 +146,7 @@
                 elem.innerHTML = "Пойти на работу (доктор)"
                 }
                 else {
-                    alert("Не хватает рублей");
+                    alert("У вас не хватает денег!");
                 }
             }
             function rabota3() {
@@ -162,7 +162,7 @@
                 elem.innerHTML = "Пойти на работу (строитель)"
                 }
                 else {
-                    alert("Не хватает рублей");
+                    alert("У вас не хватает денег!");
                 }
             }
             function rabota4() {
@@ -179,7 +179,7 @@
                 
                 }
                 else {
-                    alert("Не хватает рублей");
+                    alert("У вас не хватает денег!");
                 }
             }
             function rabota5() {
@@ -193,7 +193,7 @@
                 elem.innerHTML = "Пойти на работу (программист)"
                 }
                 else {
-                    alert("Не хватает рублей");
+                    alert("У вас не хватает денег!");
                 }
             }
         </script>
