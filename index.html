@@ -1,0 +1,201 @@
+<!--Created by Буран 436-->
+<!--Версия 2.0-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <h1 id="rub">Рублей:0</h1>
+        <button id="rab" onclick="poitiNaRaboty()"><h3 id="i">Пойти на работу (Макдональдс)</h3></button>
+        <p id="narab" style="display:none;">Вы на работе, подождите когда вернётесь...</p>
+        <h3 id="edaN">Еда:100</h3>
+        <h3 id="vodaN">Вода:100</h3>
+        <h3 id="coled">Количество еды:0</h3>
+        <button onclick="sest()"><h3>Съесть еду</h3></button>
+        <h3 id="colvod">Количество воды:0</h3>
+        <button onclick="vipit()"><h3>Выпить воду</h3></button><br /><br />
+        <button onclick="plusvoda()"><h3>Купить воду|200 руб.(Цена может изменятся)</h3></button><br />
+        <button onclick="pluseda()"><h3>Купить еду|300 руб.(Цена может изменятся)</h3></button><br /><br /><br /><br /><br />
+        <button onclick="rabota1()" id="ss1"><h3>Поступить на работу сантехник|400 руб.|Зарплата 100 руб.</h3></button>
+        <button onclick="rabota2()" id="ss2" style="display:none;"><h3>Поступить на работу доктор|1000 руб.|Зарплата 150 руб.</h3></button>
+        <button onclick="rabota3()" id="ss3" style="display:none;"><h3>Поступить на работу строитель|1500 руб.|Зарплата 200 руб.</h3></button>
+        <button onclick="rabota4()" id="ss4" style="display:none;"><h3>Поступить на работу ютубер|2000 руб.|Зарплата 250 руб.</h3></button>
+        <button onclick="rabota5()" id="ss5" style="display:none;"><h3>Поступить на работу программист|2500 руб.|Зарплата 550 руб.</h3></button>
+        <script>
+            var voda = 100;
+            var eda = 100;
+            var deneg = 0;
+            var zarplata = 50;
+            var edd = 0;
+            var vodd = 0;
+            function golod() {
+                eda -= 1;
+            }
+            setInterval(golod,6000);
+            function hhh() {
+                var elem = document.getElementById("edaN");
+                elem.innerHTML = "Еда:" + eda;
+            }
+            setInterval(hhh,1);
+            function vodano() {
+                voda -= 1;
+            }
+            setInterval(vodano,5000);
+            function jjj() {
+                var elem = document.getElementById("vodaN");
+                elem.innerHTML = "Вода:" + voda
+            }
+            setInterval(jjj,1);
+            function poitiNaRaboty() {
+                var elem = document.getElementById("rab");
+                elem.style.display = "none";
+                var elem = document.getElementById("narab");
+                elem.style.display = "block";
+                setTimeout(function ui() {
+                    deneg += zarplata;
+                    var elem = document.getElementById("rab");
+                    elem.style.display = "block";
+                    var elem = document.getElementById("narab");
+                    elem.style.display = "none";
+                },10000);
+            }
+            
+            function zar() {
+                var elem = document.getElementById("rub");
+                elem.innerHTML = "Рублей:" + deneg;
+            }
+            setInterval(zar,1);
+            
+            function pluseda() {
+                if(deneg > 299) {
+                    edd += 1;
+                    deneg -= 300;
+                }
+                else {
+                    alert("Нехватает денег");
+                }
+            }
+            
+            function plusvoda() {
+                if(deneg > 199) {
+                    deneg -= 200;
+                    vodd += 1;
+                }
+                else {
+                    alert("Денег нехватает");
+                }
+            }
+            
+            function edda() {
+                var elem = document.getElementById("coled");
+                elem.innerHTML = "Количество еды:" + edd;
+            }
+            setInterval(edda,1);
+            
+            function vodda() {
+                var elem = document.getElementById("colvod");
+                elem.innerHTML = "Количество воды:"  + vodd;
+            }
+            setInterval(vodda,1);
+            
+            function sest() {
+                if(edd > 0) {
+                    eda += 5;
+                    edd -= 1;
+                }
+                else {
+                    alert("У вас нет еды");
+                }
+            }
+            function vipit() {
+                if(vodd > 0) {
+                    voda += 10;
+                    vodd -= 1;
+                }
+                else {
+                    alert("У вас нет еды");
+                }
+            }
+            function rabota1() {
+                if(deneg > 399) {
+                zarplata -= zarplata;
+                zarplata += 100;
+                deneg -= 400;
+                var elem = document.getElementById("ss1");
+                elem.style.display = "none";
+                var elem = document.getElementById("ss2");
+                elem.style.display = "block";
+                var elem = document.getElementById("i");
+                elem.innerHTML = "Пойти на работу (сантехник)"
+                }
+                else {
+                    alert("Не хватает рублей");
+                }
+            }
+            function rabota2() {
+                if(deneg > 999) {
+                zarplata -= zarplata;
+                zarplata += 150;
+                deneg -= 1000;
+                var elem = document.getElementById("ss2");
+                elem.style.display = "none";
+                var elem = document.getElementById("ss3");
+                elem.style.display = "block";
+                var elem = document.getElementById("i");
+                elem.innerHTML = "Пойти на работу (доктор)"
+                }
+                else {
+                    alert("Не хватает рублей");
+                }
+            }
+            function rabota3() {
+                if(deneg > 1499) {
+                zarplata -= zarplata;
+                zarplata += 200;
+                deneg -= 1500;
+                var elem = document.getElementById("ss3");
+                elem.style.display = "none";
+                var elem = document.getElementById("ss4");
+                elem.style.display = "block";
+                var elem = document.getElementById("i");
+                elem.innerHTML = "Пойти на работу (строитель)"
+                }
+                else {
+                    alert("Не хватает рублей");
+                }
+            }
+            function rabota4() {
+                if(deneg > 1999) {
+                zarplata -= zarplata;
+                zarplata += 450;
+                deneg -= 2000;
+                var elem = document.getElementById("ss4");
+                elem.style.display = "none";
+                var elem = document.getElementById("ss5");
+                elem.style.display = "block";
+                var elem = document.getElementById("i");
+                elem.innerHTML = "Пойти на работу (ютубер)"
+                
+                }
+                else {
+                    alert("Не хватает рублей");
+                }
+            }
+            function rabota5() {
+                if(deneg > 2499) {
+                zarplata -= zarplata;
+                zarplata += 550;
+                deneg -= 2500;
+                var elem = document.getElementById("ss5");
+                elem.style.display = "none";
+                var elem = document.getElementById("i");
+                elem.innerHTML = "Пойти на работу (программист)"
+                }
+                else {
+                    alert("Не хватает рублей");
+                }
+            }
+        </script>
+    </body>
+</html>
